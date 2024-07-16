@@ -1,30 +1,32 @@
-# React + TypeScript + Vite
+# Cryptocurrency Dashboard
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+<img src="./docs/app-screen.gif" />
 
-Currently, two official plugins are available:
+## About
+A project that displays the temperature of a specific city using the [weather API](https://www.weatherapi.com/). Despite its simple premise, the project includes some very interesting features, such as the use of [Tailwind CSS](https://tailwindcss.com/) for most of the styling configurations (spacing, colors, fonts), [shadcn/ui](https://ui.shadcn.com/) which provides some ready-made components that can be customized (like buttons, inputs, toasts), and [LottieFiles](https://lottiefiles.com/).
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+It's worth highlighting LottieFiles here; creating animations with CSS can be quite complex, so this library offers a component that reads a json file and renders the animation. In other words, you just need to go to the LottieFiles animation library, download, and integrate it into your project.
 
-## Expanding the ESLint configuration
+## How to Run Locally
+After cloning the project, navigate to the project directory and install the project dependencies using your package manager.
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+|||
+|---|---|
+| pnpm | `pnpm install`|
+| yarn | `yarn install`|
+| npm | `npm install`|
 
-- Configure the top-level `parserOptions` property like this:
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json', './tsconfig.app.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
+Create an environment variables file named .env.local and add the following environment variables:
 ```
+VITE_API_KEY=
+VITE_API_URL=http://api.weatherapi.com/v1/
+```
+> You need to create an API key on the [weather API](https://www.weatherapi.com/).
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+With the environment variables set and the packages installed, simply run the following command:
+|||
+|---|---|
+| pnpm | `pnpm dev`|
+| yarn | `yarn dev`|
+| npm | `npm run dev`|
